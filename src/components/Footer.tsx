@@ -4,9 +4,9 @@ import ddcLogo from '@/assets/ddc-logo.png';
 import cbitLogo from '@/assets/cbit-logo.png';
 
 const socialLinks = [
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
+  { icon: Linkedin, href: 'https://in.linkedin.com/company/digital-defence-club', label: 'LinkedIn' },
   { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
+  { icon: Instagram, href: 'https://www.instagram.com/ddc_cbit/', label: 'Instagram' },
   { icon: Github, href: '#', label: 'GitHub' },
 ];
 
@@ -67,7 +67,23 @@ const Footer = () => {
                 <Mail className="w-4 h-4" />
                 ddc@cbit.ac.in
               </a>
-              
+
+              {/* DDC Team Contacts */}
+              <div className="space-y-2 pt-2">
+                <div className="font-rajdhani text-sm text-foreground/80">
+                  <span className="font-semibold">Pradeep (DDC President):</span>
+                  <a href="tel:+918184889557" className="ml-2 text-primary hover:text-secondary transition-colors">+91 81848 89557</a>
+                </div>
+                <div className="font-rajdhani text-sm text-foreground/80">
+                  <span className="font-semibold">Vasanthadithya (DDC Vice-President):</span>
+                  <a href="tel:+916305262894" className="ml-2 text-primary hover:text-secondary transition-colors">+91 6305262894</a>
+                </div>
+                <div className="font-rajdhani text-sm text-foreground/80">
+                  <span className="font-semibold">Sai Madhav (DDC EB Head):</span>
+                  <a href="tel:+918309435613" className="ml-2 text-primary hover:text-secondary transition-colors">+91 83094 35613</a>
+                </div>
+              </div>
+
               {/* Social Links */}
               <div className="flex items-center gap-4 pt-4">
                 {socialLinks.map((social) => (
