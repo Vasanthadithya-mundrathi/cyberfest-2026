@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { Shield, Users, Clock, Trophy } from 'lucide-react';
 
 const stats = [
-  { icon: Clock, value: '24-36', label: 'Hours Non-Stop', color: 'text-primary' },
+  { icon: Clock, value: '36', label: 'Hours Non-Stop', color: 'text-primary' },
   { icon: Users, value: '400+', label: 'Participants Expected', color: 'text-secondary' },
   { icon: Trophy, value: '2', label: 'Parallel Tracks', color: 'text-accent' },
   { icon: Shield, value: 'National', label: 'Level Event', color: 'text-primary' },
@@ -51,7 +51,7 @@ const AboutSection = () => {
                 the brightest minds in cybersecurity from across India.
               </p>
               <p className="font-rajdhani text-lg text-foreground/80 leading-relaxed">
-                Experience an intense 24-36 hour continuous event featuring parallel tracks of 
+                Experience an intense 36 hour continuous event featuring parallel tracks of
                 <span className="text-primary font-semibold"> Hackathon</span> and 
                 <span className="text-secondary font-semibold"> Capture The Flag (CTF)</span> challenges, 
                 complemented by expert panel talks, workshops, and networking opportunities.
@@ -79,7 +79,7 @@ const AboutSection = () => {
                 transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                 className="cyber-card card-3d rounded-xl p-6 text-center group"
               >
-                <stat.icon className={`w-10 h-10 ${stat.color} mx-auto mb-4 group-hover:scale-110 transition-transform`} />
+                <stat.icon className={`w-10 h-10 ${stat.color} mx-auto mb-4 icon-hover transition-transform`} />
                 <div className={`font-orbitron text-3xl md:text-4xl font-bold ${stat.color} mb-2`}>
                   {stat.value}
                 </div>

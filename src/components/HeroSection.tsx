@@ -5,6 +5,7 @@ import cyberfestLogo from '@/assets/cyberfest-logo.png';
 import cbitLogo from '@/assets/cbit-logo.png';
 import iicLogo from '@/assets/iic-logo.png';
 import ddcLogo from '@/assets/ddc-logo.png';
+import DataFlowLine from '@/components/DataFlowLine';
 
 const scrollToSchedule = () => {
   const scheduleSection = document.getElementById('schedule');
@@ -86,7 +87,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
-            className="flex flex-col md:flex-row items-center gap-4 md:gap-8 mb-10"
+            className="flex flex-col md:flex-row items-center gap-4 md:gap-8 mb-6"
           >
             <div className="flex items-center gap-2 text-foreground/80">
               <Calendar className="w-5 h-5 text-primary" />
@@ -97,6 +98,16 @@ const HeroSection = () => {
               <MapPin className="w-5 h-5 text-secondary" />
               <span className="font-rajdhani text-lg font-semibold">CBIT, Hyderabad</span>
             </div>
+          </motion.div>
+
+          {/* Data Flow Line */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
+            className="mb-6"
+          >
+            <DataFlowLine className="mx-auto" />
           </motion.div>
 
           {/* CTA Buttons */}

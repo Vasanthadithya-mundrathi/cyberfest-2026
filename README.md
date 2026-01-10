@@ -7,7 +7,7 @@ A National-Level Cybersecurity Conclave website for CyberFest 2K26, hosted at CB
 - **Event:** CyberFest 2K26 - National Cybersecurity Conclave
 - **Dates:** 6th & 7th February 2026
 - **Venue:** Chaitanya Bharathi Institute of Technology (CBIT), Hyderabad
-- **Duration:** 24-36 Hours Continuous Event
+- **Duration:** 36 Hours Continuous Event
 - **Organized By:** Digital Defence Club (DDC), CBIT
 
 ## ✨ Features Implemented
@@ -117,12 +117,6 @@ npm run dev
 # Build for production
 npm run build
 ```
-
-## 👩‍💻 Developer Credits
-
-**Developed by:** Dhana Sri Soli  
-**Department:** Information Technology  
-**Roll Number:** 1601-24-737-027
 
 ---
 

@@ -36,30 +36,30 @@ const ExpertSessionsSection = () => {
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="p-4 rounded-xl bg-primary/10 border border-primary/30">
-                <Users className="w-8 h-8 text-primary" />
+                <Users className="w-8 h-8 text-primary icon-hover" />
               </div>
               <h3 className="font-orbitron text-2xl font-bold">Panel Talks & Workshops</h3>
             </div>
             
             <div className="space-y-4">
               <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/30">
-                <GraduationCap className="w-6 h-6 text-accent shrink-0 mt-1" />
+                <GraduationCap className="w-6 h-6 text-accent shrink-0 mt-1 icon-hover" />
                 <div>
                   <h4 className="font-rajdhani text-lg font-semibold">IIT / NIT Faculty</h4>
                   <p className="font-rajdhani text-foreground/70">Leading academic researchers in cybersecurity</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/30">
-                <Briefcase className="w-6 h-6 text-secondary shrink-0 mt-1" />
+                <Briefcase className="w-6 h-6 text-secondary shrink-0 mt-1 icon-hover" />
                 <div>
                   <h4 className="font-rajdhani text-lg font-semibold">Cybersecurity Startup Founders</h4>
                   <p className="font-rajdhani text-foreground/70">Industry leaders building the future of security</p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/30">
-                <Award className="w-6 h-6 text-primary shrink-0 mt-1" />
+                <Award className="w-6 h-6 text-primary shrink-0 mt-1 icon-hover" />
                 <div>
                   <h4 className="font-rajdhani text-lg font-semibold">Industry Experts</h4>
                   <p className="font-rajdhani text-foreground/70">Professionals from leading tech companies</p>
@@ -77,7 +77,7 @@ const ExpertSessionsSection = () => {
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="p-4 rounded-xl bg-secondary/10 border border-secondary/30">
-                <Award className="w-8 h-8 text-secondary" />
+                <Award className="w-8 h-8 text-secondary icon-hover" />
               </div>
               <h3 className="font-orbitron text-2xl font-bold">Judging Panel</h3>
             </div>

@@ -95,9 +95,6 @@ const Footer = () => {
           <p className="font-mono-tech text-sm text-muted-foreground text-center md:text-left">
             © 2026 CyberFest 2K26. All rights reserved.
           </p>
-          <p className="font-mono-tech text-xs text-muted-foreground/70 text-center md:text-right">
-            Developed by Dhana Sri Soli | Dept. of IT | 1601-24-737-027
-          </p>
         </div>
       </div>
     </footer>

@@ -2,10 +2,11 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Calendar, MapPin, Clock, Users, Trophy, Zap } from 'lucide-react';
+import DataFlowLine from '@/components/DataFlowLine';
 
 const eventDetails = [
   { icon: Zap, label: 'Event Name', value: 'CyberFest 2026', color: 'primary' },
-  { icon: Trophy, label: 'Event Type', value: '24-36 Hour National Cybersecurity Event', color: 'secondary' },
+  { icon: Trophy, label: 'Event Type', value: 'National Level Cybersecurity Event', color: 'secondary' },
   { icon: Users, label: 'Organized By', value: 'Digital Defence Club (DDC), CBIT', color: 'accent' },
   { icon: Calendar, label: 'Dates', value: '6th & 7th February 2026', color: 'primary' },
   { icon: Clock, label: 'Duration', value: '~30-36 Continuous Hours', color: 'accent' },
@@ -42,7 +43,7 @@ const EventDetailsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="cyber-card rounded-xl p-6 group hover:scale-105 transition-all duration-300"
+              className="cyber-card rounded-xl p-6 group card-3d transition-all duration-300"
             >
               <div className="flex items-start gap-4">
                 <div className={`p-3 rounded-lg bg-${detail.color}/10 border border-${detail.color}/30`}>
@@ -54,9 +55,9 @@ const EventDetailsSection = () => {
                   </span>
                   <p className="font-rajdhani text-lg font-semibold text-foreground mt-1">
                     {detail.link ? (
-                      <a 
-                        href={detail.link} 
-                        target="_blank" 
+                      <a
+                        href={detail.link}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-primary transition-colors duration-200 underline decoration-dashed underline-offset-4"
                       >
@@ -71,6 +72,16 @@ const EventDetailsSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Data Flow Line */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="my-10"
+        >
+          <DataFlowLine className="mx-auto" />
+        </motion.div>
 
         {/* Tracks Banner */}
         <motion.div

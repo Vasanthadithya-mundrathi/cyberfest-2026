@@ -90,7 +90,7 @@ const HackathonSection = () => {
             >
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-lg bg-primary/10 border border-primary/30 group-hover:bg-primary/20 transition-colors">
-                  <area.icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
+                  <area.icon className="w-6 h-6 text-primary icon-hover transition-transform" />
                 </div>
                 <div>
                   <h4 className="font-orbitron text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">

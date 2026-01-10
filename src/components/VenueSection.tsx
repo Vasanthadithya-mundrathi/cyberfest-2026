@@ -44,7 +44,7 @@ const VenueSection = () => {
             <div className="cyber-card rounded-2xl p-8 neon-border">
               <div className="flex items-start gap-4 mb-6">
                 <div className="p-4 rounded-xl bg-primary/10 border border-primary/30">
-                  <MapPin className="w-8 h-8 text-primary" />
+                  <MapPin className="w-8 h-8 text-primary icon-hover" />
                 </div>
                 <div>
                   <h3 className="font-orbitron text-2xl font-bold mb-2">
@@ -66,7 +66,7 @@ const VenueSection = () => {
                     transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                     className="flex items-center gap-4 p-4 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors"
                   >
-                    <venue.icon className="w-6 h-6 text-primary" />
+                    <venue.icon className="w-6 h-6 text-primary icon-hover" />
                     <div>
                       <h4 className="font-rajdhani text-lg font-semibold">{venue.name}</h4>
                       <p className="font-rajdhani text-sm text-foreground/60">{venue.description}</p>

@@ -105,7 +105,7 @@ const SponsorsSection = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.4, delay: 0.4 + tierIndex * 0.1 + index * 0.05 }}
-                    className={`cyber-card rounded-xl p-6 flex items-center justify-center border ${tier.borderColor} hover:shadow-[0_0_30px_rgba(0,240,255,0.2)] transition-all duration-300 group min-h-[120px]`}
+                    className={`cyber-card rounded-xl p-6 flex items-center justify-center border ${tier.borderColor} hover:shadow-[0_0_30px_rgba(0,240,255,0.2)] transition-all duration-300 group min-h-[120px] card-3d`}
                   >
                     <div className="text-center">
                       <div className="w-20 h-20 mx-auto mb-3 rounded-lg bg-muted/30 flex items-center justify-center border border-dashed border-muted-foreground/30 group-hover:border-primary/50 transition-colors">

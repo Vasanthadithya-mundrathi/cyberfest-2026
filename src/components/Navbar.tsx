@@ -15,22 +15,36 @@ const navItems = [
   { name: 'Sponsors', href: '#sponsors' },
 ];
 
-const Navbar = () => {
+interface NavbarProps {
+  showAfterIntro?: boolean;
+}
+
+const Navbar = ({ showAfterIntro = true }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      // Calculate the height of the hero section (which is typically the viewport height)
+      const heroSection = document.querySelector('#home');
+      const heroHeight = heroSection ? heroSection.clientHeight : window.innerHeight;
+      const scrollThreshold = heroHeight * 0.6; // 60% of hero section height
+
+      setIsScrolled(window.scrollY > scrollThreshold);
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Only show navbar if intro video has ended AND user has scrolled past 60% of hero
+  const shouldShowNavbar = showAfterIntro && isScrolled;
+
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: shouldShowNavbar ? 0 : -100, opacity: shouldShowNavbar ? 1 : 0 }}
+      transition={{ type: 'spring', damping: 25, stiffness: 200 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-gradient-to-r from-[#0a1628]/95 via-[#0d1f3c]/95 to-[#0a1628]/95 backdrop-blur-lg border-b border-primary/20 shadow-[0_4px_30px_rgba(0,240,255,0.1)]'
@@ -41,9 +55,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#home" className="flex items-center">
-            <img 
-              src={cyberfestLogo} 
-              alt="CyberFest 2K26" 
+            <img
+              src={cyberfestLogo}
+              alt="CyberFest 2K26"
               className="h-10 md:h-12 object-contain drop-shadow-[0_0_10px_rgba(0,240,255,0.3)]"
             />
           </a>
