@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
@@ -15,46 +15,29 @@ import IntroVideo from '@/components/video/IntroVideo';
 
 const Index = () => {
   const [introVideoEnded, setIntroVideoEnded] = useState(false);
-  const [videoBackgroundImage, setVideoBackgroundImage] = useState<string | null>(null);
+  const [isFading, setIsFading] = useState(false);
 
-  const handleVideoEnd = (lastFrameUrl: string) => {
-    setVideoBackgroundImage(lastFrameUrl);
-    setIntroVideoEnded(true);
-  };
+  const handleVideoEnd = useCallback(() => {
+    setIsFading(true);
+    setTimeout(() => {
+      setIntroVideoEnded(true);
+    }, 1000);
+  }, []);
 
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Intro Video */}
       {!introVideoEnded && (
-        <IntroVideo
-          videoSrc={"/intro-video.mp4"}
-          onVideoEnd={handleVideoEnd}
-        />
+        <div className={`fixed inset-0 z-50 transition-opacity duration-1000 ease-in-out ${isFading ? 'opacity-0' : 'opacity-100'}`}>
+          <IntroVideo
+            videoSrc={"/intro-video.mp4"}
+            onVideoEnd={handleVideoEnd}
+          />
+        </div>
       )}
 
-      {/* Show video background overlay when video has ended */}
-      {videoBackgroundImage && (
-        <div
-          id="video-background-overlay"
-          className="fixed inset-0 z-0"
-          style={{
-            backgroundImage: `url(${videoBackgroundImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center center',
-            backgroundRepeat: 'no-repeat',
-            opacity: 0.7,
-            zIndex: 0,
-            width: '100vw',
-            height: '100vh',
-            position: 'fixed',
-            top: 0,
-            left: 0
-          }}
-        />
-      )}
-
-      {/* Show original background when video hasn't ended and no video background is set */}
-      {!introVideoEnded && !videoBackgroundImage && <CyberBackground />}
+      {/* CyberBackground - Always render it so it's visible behind transparency */}
+      <CyberBackground />
 
       {/* Navigation */}
       <Navbar showAfterIntro={introVideoEnded} />
