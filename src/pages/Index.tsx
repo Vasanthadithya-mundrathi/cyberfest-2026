@@ -31,15 +31,15 @@ const Index = () => {
       {/* Intro Video */}
       {!introVideoEnded && (
         <div className={`fixed inset-0 z-50 transition-opacity duration-1000 ease-in-out ${isFading ? 'opacity-0' : 'opacity-100'}`}>
-          {/* <IntroVideo
+          <IntroVideo
             videoSrc={"/intro-video.mp4"}
             onVideoEnd={handleVideoEnd}
-          /> */}
+          />
         </div>
       )}
 
       {/* Navigation */}
-      <Navbar  />
+      <Navbar showAfterIntro={introVideoEnded} />
 
       {/* Main Content */}
       <main className="relative z-10">
